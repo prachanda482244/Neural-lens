@@ -1,5 +1,4 @@
-import { model } from "mongoose";
-import { Schema, models } from "mongoose";
+import { Schema, model, models } from "mongoose";
 
 const UserSchema = new Schema({
   clerkId: {
@@ -20,7 +19,6 @@ const UserSchema = new Schema({
   photo: {
     type: String,
     required: true,
-    unique: true,
   },
   firstName: {
     type: String,
@@ -39,4 +37,5 @@ const UserSchema = new Schema({
 });
 
 const User = models?.User || model("User", UserSchema);
+
 export default User;
